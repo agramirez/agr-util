@@ -1,0 +1,25 @@
+{
+  "name": "agr-util",
+  "version": "0.0.1",
+  "description": "Useful utility functions akin to underscore.js...but better.",
+  "main": "lib/agr-util.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agramirez/agr-util.git"
+  },
+  "author": "Alex Ramirez <agramirez2001@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agramirez/agr-util/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-nodeunit": "~0.3.3",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-jsdoc": "~0.5.4",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
