@@ -1,6 +1,6 @@
 {
   "name": "agr-util",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Useful utility functions akin to underscore.js...but with a bit more functionality.",
   "main": "lib/agr-util.js",
   "scripts": {
