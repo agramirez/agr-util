@@ -18,29 +18,13 @@ npm install
 
 # API (V 0.3.1)
 
-*(c) 2014 Alex Ramirez*
-
-**Author:** Alex Ramirez
-
-**Overview:** Common utility functions
-
-The values of the properties are set to the values found in the
-secondparam if they exist.
-from the function contains the same properties
-as this object.
-defaults in the template object.
-param and the values, if any, from the second param.
-Returns an empty object if the template is null.
-
-
-various things such as type checking, null value defaults,
-etc.  It is intended to provide usefull building blocks and
-common functionality for larger projects and libraries.
 agr-util.isUndefined(val)
 -------------------------
+Checks a value and determines if it is undefined.
+
 **Parameters**
 
-**val**:  *Any*,  Value to check.  Can be any valid JavaScript.
+**val**:  *Any*,  Value to check.
 
 **Returns**
 
@@ -48,6 +32,8 @@ agr-util.isUndefined(val)
 
 agr-util.isNull(val)
 --------------------
+Checks a value and determines if it is null.  
+
 **Parameters**
 
 **val**:  *Any*,  Value to check.  Can be any valid JavaScript.
@@ -55,6 +41,17 @@ agr-util.isNull(val)
 **Returns**
 
 *Boolean*,  True if the value is null, false otherwise.
+
+**Example**
+
+```
+var util = require('agr-util');
+var val1 = 'something', val2 = null, val3;
+
+console.log(util.isNull(val1)); // displays false
+console.log(util.isNull(val2)); // displays true
+console.log(util.isNull(val3)); // displays false
+```
 
 agr-util.isNullOrUndefined(val)
 -------------------------------
