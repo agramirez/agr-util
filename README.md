@@ -30,6 +30,17 @@ Checks a value and determines if it is undefined.
 
 *Boolean*,  True if the value is undefined, false otherwise.
 
+**Example**
+
+```  
+var util = require('agr-util');
+var val1 = 'something', val2 = null, val3;
+
+console.log(util.isUndefined(val1)); // displays false
+console.log(util.isUndefined(val2)); // displays false
+console.log(util.isUndefined(val3)); // displays true
+```
+
 agr-util.isNull(val)
 --------------------
 Checks a value and determines if it is null.  
@@ -55,23 +66,32 @@ console.log(util.isNull(val3)); // displays false
 
 agr-util.isNullOrUndefined(val)
 -------------------------------
-otherwise.
+Checks a value and determines if it is null or undefined.
 
 
 **Parameters**
 
-**val**:  *Any*,  Value to check.  Can be any valid JavaScript.
+**val**:  *Any*,  Value to check.
 
 **Returns**
 
-*Boolean*,  True if the value is null or undefined, false
+*Boolean*,  True if the value is null or undefined, false otherwise.
+
+**Example**
+
+```
+var util = require('agr-util');
+var val1 = 'something', val2 = null, val3;
+
+console.log(util.isNullOrUndefined(val1)); // displays false
+console.log(util.isNullOrUndefined(val2)); // displays true
+console.log(util.isNullOrUndefined(val3)); // displays true
+```
 
 agr-util.isEmptyObject(val)
 ---------------------------
-empty means that the object has no properties or any value
-(i.e. val = {}).  A null or undefined value will also be treated
+Checks that an object is empty.  In this case empty means that the object has no properties (i.e. val = {}).  A null or undefined value will also be treated
 as empty.
-
 
 **Parameters**
 
@@ -81,6 +101,18 @@ as empty.
 
 *Boolean*,  True if the object is empty, false otherwise.
 
+**Example**
+
+```
+var util = require('agr-util');
+var val1 = 'something', val2 = null, val3, val4 = {}, val5 = {prop: 14};
+
+console.log(util.isEmptyObject(val1)); // displays false
+console.log(util.isEmptyObject(val2)); // displays true
+console.log(util.isEmptyObject(val3)); // displays true
+console.log(util.isEmptyObject(val4)); // displays true
+console.log(util.isEmptyObject(val5)); // displays false
+```
 agr-util.isEmptyArray(val)
 --------------------------
 empty means that the array has no values (i.e. its length is 0).
