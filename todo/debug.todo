@@ -1,0 +1,11 @@
+# objective
+
+add debug functionality to the agr-util project
+
+#tasks
+create basic debug on/off switch
+expose debug logic for unit testing
+test basic debug logic
+implement debug code in all functions
+
+
