@@ -269,3 +269,24 @@ console.log(util.isFunction({})); // returns false
 console.log(util.isFunction('')); // returns false
 console.log(util.isFunction(function () { return this; })); // returns true
 ```
+
+agr-util.isFunction(val) 
+-----------------------
+Tests an input to see if it is boolean.
+
+**parameters**
+
+**val**: *Any*, Object to check.
+
+**Returns** *Boolean*, True if the value is boolean, false otherwise
+
+**Example**
+```
+var util = require('agr-util');
+var val = true;
+
+console.log(util.isBoolean(false)); // returns true
+console.log(util.isBoolean(val)); // returns true
+console.log(util.isBoolean('')); // returns false
+console.log(util.isBoolean(function () { return true; })); // returns false
+```
