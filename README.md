@@ -250,3 +250,22 @@ Returns an empty object if the template is null.
 **Returns**
 
 *Object*,  New object with the properties specfified in the first
+
+agr-util.isFunction(val) 
+-----------------------
+Tests an object to see if it is a function.
+
+**parameters**
+
+**val**: *Object*, Object to check.
+
+**Returns** *Boolean*, True if the value is a function, false otherwise
+
+**Example**
+```
+var util = require('agr-util');
+
+console.log(util.isFunction({})); // returns false
+console.log(util.isFunction('')); // returns false
+console.log(util.isFunction(function () { return this; })); // returns true
+```
