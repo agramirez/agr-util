@@ -207,15 +207,17 @@ agr-util.isString(val)
 
 agr-util.nullValueList(val, vals)
 ---------------------------------
-oracle or the coalesce function in ms sql.  Returns the first
-non-null value from the available choices.  Note that the vals
-param can be an array of possible values to return.  If the value
-that should be returned is an array, and not a value inside the
-array, then the original array to return must be placed within
-an array wrapper.  If this is not done the function will think
-that it must return a value within the array and not the array
-itself.
-single value or an array of values.
+Similar to the oracle nvl or the coalesce function in ms sql.  
+Returns the first non-null value from the available choices.  
+Note that the vals param can be an array of possible values 
+to return.  If the value that should be returned is an array, 
+and not a value inside the array, then the original array to 
+return must be placed within an array wrapper.  If this is 
+not done the function will think that it must return a value 
+within the array and not the array itself.
+
+**Alias (AKA)**
+agr-util.nvl(val,vals)
 
 
 **Parameters**
