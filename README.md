@@ -17,7 +17,7 @@ cd agr-util
 npm install
 ```
 
-# API (V 0.3.1)
+# API (V 1.2.1)
 
 agr-util.isUndefined(val)
 -------------------------
