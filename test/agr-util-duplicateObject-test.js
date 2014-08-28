@@ -44,3 +44,26 @@ exports.duplicateObject = {
     test.done();
   },
 };
+// test the aliases for this function
+exports.alias = {
+	'dupo': function (test) {
+		var expected = util.duplicateObject, actual = util.dupo;
+		
+		test.expect(2);
+		
+		test.ok(actual !== null || typeof actual !== 'undefined', 'alias not found');
+		test.equal(expected, actual, 'alias same as function');
+		
+		test.done();
+	},
+	'dparams': function (test) {
+		var expected = util.duplicateObject, actual = util.dparams;
+		
+		test.expect(2);
+		
+		test.ok(actual !== null || typeof actual !== 'undefined', 'alias not found');
+		test.equal(expected, actual, 'alias same as function');
+		
+		test.done();
+	}
+};
