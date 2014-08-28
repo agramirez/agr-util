@@ -33,7 +33,7 @@ Checks a value and determines if it is undefined.
 
 **Example**
 
-```  
+```javascript
 var util = require('agr-util');
 var val1 = 'something', val2 = null, val3;
 
@@ -56,7 +56,7 @@ Checks a value and determines if it is null.
 
 **Example**
 
-```
+```javascript
 var util = require('agr-util');
 var val1 = 'something', val2 = null, val3;
 
@@ -80,7 +80,7 @@ Checks a value and determines if it is null or undefined.
 
 **Example**
 
-```
+```javascript
 var util = require('agr-util');
 var val1 = 'something', val2 = null, val3;
 
@@ -104,7 +104,7 @@ as empty.
 
 **Example**
 
-```
+```javascript
 var util = require('agr-util');
 var val1 = 'something', val2 = null, val3, val4 = {}, val5 = {prop: 14};
 
@@ -149,6 +149,9 @@ null, undefined, or ''.  For arrays empty means null, undefined,
 or [].  For objects empty means null, undefined, or {}.
 False otherwise.
 
+**Alias (AKA)**
+agr-util.inoe(val)
+
 
 **Parameters**
 
@@ -160,12 +163,15 @@ False otherwise.
 
 agr-util.isNullOrWhitespace(val)
 --------------------------------
+Checks a value to determine if it is null or empty.  This method
 works on any valid JavaScript object.  For strings empty means
-null, undefined, '', or a string consisting only of whitespace.                 For arrays empty means null, undefined, or [].  For objects
+null, undefined, '', or a string consisting only of whitespace.
+For arrays empty means null, undefined, or [].  For objects 
 empty means null, undefined, or {}.  This method works on any
 object, but it is most useful for strings.
-whitespace.  False otherwise.
 
+**Alias (AKA)**
+agr-util.inow(val)
 
 **Parameters**
 
@@ -173,7 +179,7 @@ whitespace.  False otherwise.
 
 **Returns**
 
-*Boolean*,  True if the value is null, undefined, empty, or
+*Boolean*,  True if the value is null, undefined, empty, or whitespace.  False otherwise.
 
 agr-util.isObject(val)
 ----------------------
@@ -232,24 +238,40 @@ agr-util.nvl(val,vals)
 
 agr-util.duplicateObject(template, values)
 ------------------------------------------
+Creates a new object with the properties of the first param.  
 The values of the properties are set to the values found in the
 secondparam if they exist.
-from the function contains the same properties
-as this object.
-defaults in the template object.
-param and the values, if any, from the second param.
-Returns an empty object if the template is null.
 
+**Alias (AKA)**
+agr-util.dupo(template,values)
+agr-util.dparams(template,values)
 
 **Parameters**
 
-**template**:  *Object*,  Object to be used as a template.  The result
+**template**:  *Object*, Object to be used as a template.  The result from the function contains the same properties as this object.
 
-**values**:  *Object*,  Object with the new values to override the
+**values**:  *Object*,  Object with the new values to override the defaults in the template object.
 
 **Returns**
 
-*Object*,  New object with the properties specfified in the first
+*Object*,  New object with the properties specfified in the first param and the values, if any, from the second param.  Returns an empty object if the template is null.
+
+**Example**
+```javascript
+	var util = require('agr-util');
+	var template = {one: 1, two: 'two'};
+	var test1, test2, test3, test4;
+	
+	test1 = util.duplicateObject(template);
+	test2 = util.duplicateObject(template, {two: 'foo'});
+	test3 = util.duplicateObject({}, template);
+	test4 = util.duplicateObject(template, {one: 100, two: 'bar', three: 'ignored'});
+
+	console.log(test1)); // {one: 1, two: 'two'}
+	console.log(test2); // {one: 1, two: 'foo'}
+	console.log(test3); // {one: 1, two: 'two'}
+	console.log(test4); // {one: 100, two: 'bar'}
+```
 
 agr-util.isFunction(val) 
 -----------------------
@@ -262,26 +284,27 @@ Tests an object to see if it is a function.
 **Returns** *Boolean*, True if the value is a function, false otherwise
 
 **Example**
-```
+```javascript
 var util = require('agr-util');
 
 console.log(util.isFunction({})); // returns false
 console.log(util.isFunction('')); // returns false
 console.log(util.isFunction(function () { return this; })); // returns true
+console.log(util.isFunction(util.isFunction); // returns true
 ```
 
-agr-util.isFunction(val) 
+agr-util.isBoolean(val) 
 -----------------------
-Tests an input to see if it is boolean.
+Checks if the input is a boolean type or not.
 
 **parameters**
 
 **val**: *Any*, Object to check.
 
-**Returns** *Boolean*, True if the value is boolean, false otherwise
+**Returns** *Boolean*, True if the value is boolean, false otherwise.
 
 **Example**
-```
+```javascript
 var util = require('agr-util');
 var val = true;
 
@@ -289,4 +312,5 @@ console.log(util.isBoolean(false)); // returns true
 console.log(util.isBoolean(val)); // returns true
 console.log(util.isBoolean('')); // returns false
 console.log(util.isBoolean(function () { return true; })); // returns false
+console.log(util.isBoolean(util.isFunction); // returns false
 ```
