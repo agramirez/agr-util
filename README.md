@@ -243,7 +243,9 @@ The values of the properties are set to the values found in the
 secondparam if they exist.
 
 **Alias (AKA)**
+
 agr-util.dupo(template,values)
+
 agr-util.dparams(template,values)
 
 **Parameters**
@@ -321,12 +323,15 @@ Sets the object property to the specified value or returns the current value of 
 If the property does not exist and a value is given it creates the property in the object.
 
 **Alias (AKA)**
+
 agr-util.gsp(obj, prop, val)
 
 **parameters**
 
 **obj**: *Object*, Object from which we want to get or set properties.  A new object will be instantiated if it is falsey.
+
 **prop**: *String*, Name of the object property which we want to get or set.  Cannot be null.
+
 **val**: *Any*, The value that we want to set the property to.  If null we return the current property value.
 
 **Returns** *Any*, If the prop value is null, undefined, or empty string
