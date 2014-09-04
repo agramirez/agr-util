@@ -1,7 +1,7 @@
 {
   "name": "agr-util",
-  "version": "1.2.1",
-  "description": "Useful utility functions akin to underscore.js...but with a bit more functionality.",
+  "version": "1.2.2",
+  "description": "Useful utility functions akin to underscore.js...but with some extras.",
   "main": "lib/agr-util.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -314,3 +314,45 @@ console.log(util.isBoolean('')); // returns false
 console.log(util.isBoolean(function () { return true; })); // returns false
 console.log(util.isBoolean(util.isFunction); // returns false
 ```
+
+agr-util.getSetProperty(obj, prop, val) 
+-----------------------
+Sets the object property to the specified value or returns the current value of the property.  
+If the property does not exist and a value is given it creates the property in the object.
+
+**Alias (AKA)**
+agr-util.gsp(obj, prop, val)
+
+**parameters**
+
+**obj**: *Object*, Object from which we want to get or set properties.  A new object will be instantiated if it is falsey.
+**prop**: *String*, Name of the object property which we want to get or set.  Cannot be null.
+**val**: *Any*, The value that we want to set the property to.  If null we return the current property value.
+
+**Returns** *Any*, If the prop value is null, undefined, or empty string
+
+**Throws** *Error*, If the prop value is null, undefined, or empty string.
+
+**Example**
+```javascript
+var util = require('agr-util');
+var objOne = {}, objTwo = {foo: 'bar'};
+
+console.log(objOne); // outputs {}
+console.log(util.getSetProperty(objOne, 'foo', 'bar')); // outputs {foo: 'bar'}
+console.log(util.getSetProperty(objOne, 'foo')); // outputs 'bar'
+console.log(objOne); // outputs {foo: 'bar'}
+
+console.log(objTwo); // outputs {foo: 'bar'}
+console.log(util.getSetProperty(objTwo, 'foo', 'rab')); // outputs {foo: 'rab'}
+console.log(util.getSetProperty(objTwo, 'bar', 'oof')); // outputs {foo: 'rab', bar: 'oof'}
+console.log(util.getSetProperty(objOne, 'foo')); // outputs 'rab'
+console.log(util.getSetProperty(objOne, 'bar')); // outputs 'oof'
+console.log(objOne); // outputs {foo: 'rab', bar: 'oof'}
+
+// the following throw errors
+util.getSetProperty(objOne);
+util.getSetProperty(objOne, null);
+util.getSetProperty(objOne, '');
+util.getSetProperty(objOne, '    ');
+```
