@@ -2,12 +2,12 @@
 This is a set of utilities to help achieve common tasks in a nice and uniform manner.  This is similar to [underscore](http://underscore.org)...but with a bit more capabilities.
 
 ##Install
-To install the app you can get the latest code from github or install it using npm.
+To install the app you can get the latest code from GitHub or install it using npm.
 ```
   npm install agr-util --save
 ```
 
-###Install from github
+###Install from github for Node
 
 You can get the latest version of the code base by using git to pull all the files from github.com.  The easiest way to do it is to clone the repo.  This will create a local folder with most of the required files.  After cloning the repo you will need to install dependcies using npm. 
 
@@ -15,6 +15,31 @@ You can get the latest version of the code base by using git to pull all the fil
 git clone git@github.com:agramirez/agr-util.git
 cd agr-util
 npm install
+```
+
+###Install from GitHub for Browser
+
+To use the agr-util library clone the latest version from GitHub and import into any file from which you want to use it.  Another way is to simply download and/or include the lib/agr-util.js file into your html pages directly.
+
+*Note: The dloger.js file must also be included in the project and must be placed _before_ the agr-util.js reference*
+
+*Download from GitHub*
+```
+git clone git@github.com:agramirez/agr-util.git
+```
+
+*Include in HTML*
+```html
+	<script src="path/to/agr-util.js"></script>
+	<script src="path/to/dlogger.js"></script>
+	
+	<!-- call the util functions -->
+	<script>
+		var obj = {};
+		
+		console.log(window.util.inou(obj)); // displays false
+		console.log(util.inou(obj)); // displays false
+	</script>
 ```
 
 # API (V 1.2.1)
